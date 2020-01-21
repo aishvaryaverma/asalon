@@ -1,0 +1,258 @@
+.mainBanner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    background: image('banner-img.jpg') center no-repeat;
+    background-size: cover;
+
+    .container {
+        display: flex;
+        height: 100vh;
+        padding-top: 16rem;
+        padding-bottom: 2rem;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    &__videoBtn {
+        position: relative;
+        z-index: 1;
+
+        a {
+            display: inline-flex;
+            position: relative;
+
+            span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 8.4rem;
+                height: 8.4rem;
+                color: white;
+                background: $color-primary;
+                border-radius: 50%;
+    
+                i { margin-left: .2rem; }
+            }
+    
+            img {
+                position: absolute;
+                right: -3rem;
+                bottom: 0;
+            }
+
+            &:hover {
+
+                span { background: darken($color-primary, 15%); }
+            }
+        }
+    }
+
+    &__tabBox {
+        margin-top: auto;
+
+        .contentBox {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .item {
+                width: 30%;
+
+                &:first-child { width: 60%; }
+            }
+
+            h2 {
+                font-size: 5.2rem;
+                color: white;
+            }
+            p {
+                color: white;
+            }
+        }
+
+        .tabNav {
+            display: flex;
+            margin-top: 4rem;
+            border-bottom: 2px solid rgba(white, 0.1);
+
+            li {
+                display: block;
+                flex-grow: 1;
+                font-size: 1.5rem;
+                font-weight: $font-semi;
+                text-transform: uppercase;
+
+                a {
+                    display: block;
+                    padding: 2rem 1rem;
+                    margin-bottom: -2px;
+                    color: rgba(white, 0.4);
+                    border-bottom: 2px solid transparent;
+
+                    span {
+                        color: white;
+                        margin-right: .5rem;
+                    }
+
+                    &.active {
+                        color: white;
+                        border-color: $color-primary;
+                    }
+                }
+            }
+        }
+    }
+
+    &__socials {
+        display: flex;
+        margin-top: auto;
+
+        a {
+            display: block;
+            font-family: $font-family-tertiary;
+            font-size: 1.6rem;
+            color: white;
+            margin-left: 2rem;
+            font-weight: $font-semi;
+            text-transform: uppercase;
+
+            span { font-size: 1.4rem; }
+
+            &:first-child { margin-left: 0; }
+        }
+    }
+}
+
+.aboutSection {
+    position: relative;
+    z-index: 2;
+    padding: 8rem 0;
+    background: $color-tertiary;
+
+    &__top {
+        position: relative;
+        padding-bottom: 6rem;
+
+        .container {
+            position: relative;
+        }
+
+        .blueContentBox {
+            position: absolute;
+            top: -50%;
+            right: 0;
+            max-width: 60rem;
+            padding: 7rem 9rem 5rem 9rem;
+            background: $color-secondary;
+            transform: translateY(30%);
+
+            p { color: white; }
+        }
+        .aboutImg {
+            position: absolute;
+            right: 0;
+            bottom: -4rem;
+            max-width: 55%;
+        }
+    }
+    
+    &__bottom {
+        padding: 8rem 0 6rem;
+
+        .aboutWidgets {
+            position: relative;
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+
+            .item {
+                position: relative;
+                z-index: 1;
+                display: flex;
+                padding: 4rem;
+                flex-basis: 24.5%;
+                flex-direction: column;
+                align-items: flex-start;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 10rem;
+                    left: 0;
+                    bottom: 8rem;
+                    width: 100%;
+                    border: 1px solid rgba(white, 0.1);
+                    transition: all .3s ease-out;
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 100%;
+                    left: 3rem;
+                    right: 3rem;
+                    height: 2px;
+                    opacity: 0;
+                    margin-top: -2px;
+                    background: $color-primary;
+                    transition: all .3s ease-out;
+                }
+
+                .count {
+                    font-family: $font-family-secondary;
+                    font-size: 6rem;
+                    line-height: 1.2;
+                    height: 4.4rem;
+                    overflow: hidden;
+                    margin-bottom: 4rem;
+                    color: $color-primary;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all .3s ease-out;
+                }
+                p {
+                    margin-bottom: 0;
+                    color: rgba(white, 0.5);
+                }
+                .btn {
+                    opacity: 0;
+                    margin-top: 4rem;
+                    visibility: hidden;
+                }
+
+                &:hover {
+                    &:before {
+                        top: 0;
+                        bottom: 0;
+                    }
+                    &:after { opacity: 1; }
+                    .count { 
+                        opacity: 1;
+                        visibility: visible;
+                     }
+                    .btn {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+            &:hover {
+                // align-items: center;
+            }
+        }
+
+        .collaboratedBrands {
+            padding: 0 5rem;
+
+            &__list {
+                display: flex;
+                padding-top: 2rem;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+    }
+}

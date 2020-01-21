@@ -1,0 +1,150 @@
+.mainHeader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+
+    $self: &;
+
+    &__top {
+        display: flex;
+        padding: 3rem 0;
+        align-items: center;
+        justify-content: space-between;
+        transition: all .4s ease-out;
+    }
+
+    &__logo {
+        display: flex;
+        a {
+            display: block;
+            transition: none;
+
+            img {
+                max-width: 100%;
+                
+                @media (max-width: $tablet-big) {
+                    width: 18rem;
+                }
+                @media (max-width: $mobile-big) {
+                    width: 16rem;
+                }
+            }
+
+            @media (max-width: $tablet-big) {
+                padding: 2rem 1rem;
+            }
+            @media (max-width: $mobile-big) {
+                
+            }
+        }
+
+        @media (max-width: $tablet-big) {
+            width: 30%;
+            margin-left: 0;
+        }
+        @media (max-width: $mobile-big) {
+            width: auto;
+            flex-shrink: 1;
+            flex-basis: 20rem;
+        }
+        @media (max-width: $mobile-medium) {
+            flex-basis: 16rem;
+        }
+        @media (max-width: $mobile-extra-small) {
+            flex-basis: 14rem;
+        }
+    }
+
+    &__mainMenu {
+        padding: 0;
+
+        > ul {
+            display: flex;
+            align-items: center;
+
+            > li {
+                position: relative;
+                z-index: 1;
+                display: block;
+                font-family: $font-family-tertiary;
+                font-size: 1.6rem;
+                margin-left: 3rem;
+                transition: all .3s ease-out;
+                border-bottom: 3px solid transparent;
+                
+                &:first-child { margin-left: 0; }
+
+                a {
+                    display: block;
+                    color: white;
+                    padding: 1.2rem 0 1rem;
+                    letter-spacing: .1rem;
+                    text-transform: uppercase;
+
+                    img { width: 3rem; height: 3rem; }
+
+                    &.active {
+                        img { padding: .7rem; }
+                    }
+                }
+
+                .dropdown-custom {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 18rem;
+                    background: rgba(black, 0.85);
+                    border-top: 3px solid $color-primary;
+
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(5rem);
+                    transition: all .25s ease-out;
+
+                    li {
+                        display: block;
+                        
+                        a {
+                            padding: 1.5rem 2rem;
+
+                            &:hover {
+                                color: $color-primary;
+                                background: rgba(black, 1);
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    border-color: $color-primary;
+                    > a { color: $color-primary; }
+
+                    .dropdown-custom {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: translateY(0);
+                    }
+                }
+            }
+        }
+
+        @media (max-width: $tablet-big) {
+            display: none;
+        }
+    }
+
+    &__bookApoint {
+        padding: 0;
+    }
+
+    &--sticky {
+        background: rgba(black, 0.85);
+        box-shadow: 0 5px 5px 0 rgba(black, 0.09);
+
+        #{$self}__top {
+            padding: 2rem 0;
+        }
+    }
+}

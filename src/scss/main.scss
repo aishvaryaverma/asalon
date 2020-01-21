@@ -1,0 +1,39 @@
+@import 'abstracts/variables';
+@import 'abstracts/mixin';
+@import 'abstracts/functions';
+
+@import 'vendors/slick';
+@import 'vendors/slick-theme';
+
+@import "base/animations";
+@import "base/base";
+@import "base/fonts";
+@import "base/helper";
+@import "base/typography";
+@import "base/utilities";
+
+
+@import "components/alert";
+@import "components/card";
+@import "components/button";
+@import "components/forms";
+@import "components/headings";
+@import "components/no-records";
+@import "components/pagination";
+@import "components/section";
+@import "components/spinner";
+@import "components/tabs";
+@import "components/table";
+@import "components/banner";
+@import "components/ads-banners";
+@import "components/sidebar";
+
+
+@import "layouts/header";
+@import "layouts/menu";
+@import "layouts/grid";
+@import "layouts/footer";
+
+
+@import "pages/home";
+@import "pages/inner-page";
