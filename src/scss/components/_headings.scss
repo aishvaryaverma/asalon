@@ -1,8 +1,6 @@
 // Default Heading
 .headingBox {
-	display: flex;
-	padding: 1rem;
-	align-items: center;
+	text-align: center;
 	margin-bottom: 4rem;
 	
 	&.white { background: white; }

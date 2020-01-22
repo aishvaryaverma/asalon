@@ -122,6 +122,8 @@
             span { font-size: 1.4rem; }
 
             &:first-child { margin-left: 0; }
+
+            &:hover { color: $color-primary; }
         }
     }
 }
@@ -129,7 +131,7 @@
 .aboutSection {
     position: relative;
     z-index: 2;
-    padding: 8rem 0;
+    padding: 8rem 0 0;
     background: $color-tertiary;
 
     &__top {
@@ -160,12 +162,11 @@
     }
     
     &__bottom {
-        padding: 8rem 0 6rem;
+        padding: 8rem 0 2rem;
 
         .aboutWidgets {
             position: relative;
             display: flex;
-            // align-items: center;
             justify-content: space-between;
 
             .item {
@@ -182,8 +183,9 @@
                     position: absolute;
                     top: 10rem;
                     left: 0;
-                    bottom: 8rem;
+                    z-index: -2;
                     width: 100%;
+                    bottom: 8rem;
                     border: 1px solid rgba(white, 0.1);
                     transition: all .3s ease-out;
                 }
@@ -196,6 +198,7 @@
                     right: 3rem;
                     height: 2px;
                     opacity: 0;
+                    z-index: -1;
                     margin-top: -2px;
                     background: $color-primary;
                     transition: all .3s ease-out;
@@ -240,7 +243,7 @@
                 }
             }
             &:hover {
-                // align-items: center;
+                align-items: flex-start;
             }
         }
 
@@ -253,6 +256,155 @@
                 align-items: center;
                 justify-content: space-between;
             }
+        }
+    }
+}
+
+.servicesSection {
+    position: relative;
+    z-index: 1;
+    padding: 8rem 0;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 35%;
+        z-index: -1;
+        background: $color-tertiary;
+    }
+
+    &__grid {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .item {
+            position: relative;
+            z-index: 1;
+            flex-shrink: 1;
+            flex-basis: 32%;
+
+            @mixin transition { transition: all .5s cubic-bezier(.22,.68,0,1.71); }
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: image('overlay.png') left bottom no-repeat;
+                background-size: 100% auto;
+
+                opacity: 0;
+                visibility: hidden;
+                @include transition;
+            }
+
+            figure { margin: 0; }
+
+            .caption {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                z-index: 2;
+                width: 100%;
+                text-align: center;
+                padding: 4rem 5rem;
+                transition: all .5s cubic-bezier(.22,.68,0,1.71);
+
+                p { color: white; }
+
+                .btn {
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all .5s cubic-bezier(.22,.68,0,1.71);
+                }
+            }
+
+            &:hover {
+                .caption { bottom: 5rem; }
+
+                &:before, .btn {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
+
+.locationSection {
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    min-height: 60rem;
+
+    &__contentBox {
+        padding: 0;
+
+        .btnBox {
+            padding: 5rem 0 3rem;
+        }
+    }
+
+    &__sliderBox {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        max-width: 50%;
+
+        .locationSlider {
+            padding: 0;
+
+            .slide {
+                padding: 0 .5rem;
+            }
+
+            .slick-dots {
+                bottom: 0;
+                left: -10rem;
+
+                li {
+                    width: 1rem;
+                    height: 1rem;
+                    background: #d6d6d6;
+                    border-radius: 50%;
+
+                    &.slick-active { background: $color-primary; }
+                }
+            }
+        }
+    }
+}
+
+.testimonials {
+    padding: 8rem 0 12rem;
+
+    &__slider {
+        width: 60%;
+        margin: 0 auto;
+        padding: 2rem 0;
+        text-align: center;
+
+        .stars {
+            display: flex;
+            margin: 3rem 0;
+            align-items: center;
+            justify-content: center;
+
+            i { color: $color-primary; }
+        }
+
+        .slick-prev {
+            left: -11rem;
+        }
+        .slick-next {
+            right: -11rem;
         }
     }
 }

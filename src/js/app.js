@@ -44,62 +44,67 @@ var app = {
     },
 
     homePage: function () {
-        $('#discoverJewels').slick({
-            infinite: true,
-            arrows: true,
-            dots: false,
+        $('#locationSlider').slick({
+            infinite: false,
+            arrows: false,
+            dots: true,
             speed: 500,
             autoplay: true,
-            slidesToShow: 4,
+            slidesToShow: 2.5,
             slidesToScroll: 1,
             cssEase: 'linear',
             autoplaySpeed: 2000,
             responsive: [
-                {
-                    breakpoint: 993,
-                    settings: {
-                        slidesToShow: 3
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 2
-                    }
-                },
-                {
-                    breakpoint: 481,
-                    settings: {
-                        slidesToShow: 1
-                    }
-                }
+                // {
+                //     breakpoint: 993,
+                //     settings: {
+                //         slidesToShow: 3
+                //     }
+                // },
+                // {
+                //     breakpoint: 768,
+                //     settings: {
+                //         slidesToShow: 2
+                //     }
+                // },
+                // {
+                //     breakpoint: 481,
+                //     settings: {
+                //         slidesToShow: 1
+                //     }
+                // }
             ]
         });
-
-        var options = {
+        $('#testimonialSlider').slick({
             infinite: false,
-            dots: false,
             arrows: true,
-            speed: 300,
+            dots: false,
+            speed: 500,
+            autoplay: true,
             slidesToShow: 1,
             slidesToScroll: 1,
+            cssEase: 'linear',
+            autoplaySpeed: 2000,
             responsive: [
-                {
-                    breakpoint: 1025,
-                    settings: {
-                        slidesToShow: 1
-                    }
-                }
+                // {
+                //     breakpoint: 993,
+                //     settings: {
+                //         slidesToShow: 3
+                //     }
+                // },
+                // {
+                //     breakpoint: 768,
+                //     settings: {
+                //         slidesToShow: 2
+                //     }
+                // },
+                // {
+                //     breakpoint: 481,
+                //     settings: {
+                //         slidesToShow: 1
+                //     }
+                // }
             ]
-        }
-        
-        $('.productSlider').slick(options);
-        
-        // Product Tabs Slider
-        $('.nav-tabs a').on('shown.bs.tab', function(event){
-            var id = event.target.getAttribute('href');
-            $('.productSlider').slick('destroy');
-            $(id).find('.productSlider').slick(options);
         });
     },
 
