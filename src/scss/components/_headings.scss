@@ -10,7 +10,13 @@
 	&.mb_md { margin-bottom: 4rem; }
 	&.mb_lg { margin-bottom: 8rem; }
 
-	&.left { text-align: left; }
+	&.left {
+		text-align: left;
+
+		@media screen and (max-width: $tablet-small) {
+			text-align: center;
+		}
+	}
 
 	h1, h2, h3, h4, h5, h6 { margin-bottom: 1rem; }
 

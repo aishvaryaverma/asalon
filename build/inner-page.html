@@ -28,10 +28,11 @@
                 </div>
 
                 <div class="mainHeader__mainMenu">
-                    <ul>
+                    <div class="menuHandle" id="showMenu"><img src="img/svg/menu.svg" alt="menu"></div>
+                    <ul id="mainMenu">
                         <li><a href="#!">About</a></li>
                         <li>
-                            <a href="#!">Members</a>
+                            <a href="#!" class="dropdown-handle">Members <i class="fas fa-caret-down"></i></a>
                             <ul class="dropdown-custom">
                                 <li><a href="#!">Submenu</a></li>
                                 <li><a href="#!">Submenu</a></li>
@@ -122,7 +123,7 @@
         <div class="container">
 
             <div class="mainFooter__appointMent">
-                <h4 class="size24 barlow white margin-bottom-0">
+                <h4 class="size24 barlow white">
                     <img src="img/phone.png" alt="phone: ">
                     <span>+91 11-46576464</span>
                     <span class="small">Mon - Sat, 09:00 AM - 08:00 PM</span>
@@ -132,14 +133,14 @@
 
             <div class="mainFooter__links">
                 <div class="row justify-content-between">
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-3">
                         <h5 class="barlow-condensed">Headquaters</h5>
                         <p>G 45, ground floor, <br />
                             Green Park, <br />
                             New Delhi
                         </p>
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-3">
                         <h5 class="barlow-condensed">quick links</h5>
                         <ul class="navs">
                             <li><a href="#!">About us</a></li>
@@ -147,14 +148,14 @@
                             <li><a href="#!">Services</a></li>
                         </ul>
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-3">
                         <h5 class="barlow-condensed">&nbsp;</h5>
-                        <ul class="navs">
+                        <ul class="navs adjusted">
                             <li><a href="#!">Locations</a></li>
                             <li><a href="#!">Contact us</a></li>
                         </ul>
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-3">
                         <h5 class="barlow-condensed">services</h5>
                         <ul class="navs">
                             <li><a href="#!">Hair</a></li>
@@ -162,7 +163,7 @@
                             <li><a href="#!">Beauty</a></li>
                         </ul>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 col-md-12">
                         <div class="mainFooter__socials">
                             <a href="#!"><i class="fab fa-instagram"></i> <span>Instagram</span></a>
                             <a href="#!"><i class="fab fa-facebook"></i> <span>Facebook</span></a>
@@ -186,7 +187,7 @@
     
     
     <!-- Javascripts -->
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/slick.min.js"></script>
