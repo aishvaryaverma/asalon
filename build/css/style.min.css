@@ -2507,6 +2507,8 @@ ul {
         margin-left: 0; }
       .mainBanner__socials a:hover {
         color: #c6a774; }
+  .mainBanner .execphpwidget {
+    margin-top: auto; }
 
 .aboutSection {
   position: relative;
